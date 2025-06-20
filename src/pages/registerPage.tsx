@@ -1,34 +1,33 @@
 import { BrandLogo, Spinner } from "@/components/ui/icons";
 import { PasswordToggleButton } from "@/components/ui/passwordToggleButton";
 import Typography from "@/components/ui/typography";
+import { mockRequest } from "@/service/apiRequestService";
 import { showToast } from "@/utils/showToast";
 import { Button, Divider, Input, Spacer } from "@heroui/react";
 import React from "react";
-import { Form, Link } from "react-router";
+import { Form, Link, useNavigate } from "react-router";
 
 
 const useRegister = () => {
     const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
     const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = React.useState(false);
     const [isRequesting, setIsRequesting] = React.useState(false);
-
+    const navigate = useNavigate()
     const togglePasswordVisibility = () => setIsPasswordVisible(!isPasswordVisible);
     const toggleConfirmPasswordVisibility = () => setIsConfirmPasswordVisible(!isConfirmPasswordVisible);
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
         setIsRequesting(true);
-
         try {
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+            await mockRequest()
             showToast("Success", "Sign Up Sucessfully", "default");
+            navigate("/login")
         } catch (error: any) {
             showToast("Something went wrong", error.message,  "danger");
         } finally {
             setIsRequesting(false)
         }
-
     }
 
     return { isPasswordVisible, isRequesting, isConfirmPasswordVisible, togglePasswordVisibility, toggleConfirmPasswordVisibility, onSubmit }

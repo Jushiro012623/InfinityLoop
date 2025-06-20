@@ -1,6 +1,7 @@
 import { BrandLogo } from '@/components/ui/icons'
 import { PasswordToggleButton } from '@/components/ui/passwordToggleButton'
 import Typography from '@/components/ui/typography'
+import { mockRequest } from '@/service/apiRequestService'
 import { showToast } from '@/utils/showToast'
 import { Button, Form, Input, Spacer, Spinner } from '@heroui/react'
 import React from 'react'
@@ -21,7 +22,7 @@ const useUpdatePassword = () => {
         event.preventDefault();
         setIsRequesting(true);
         try {
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+            await mockRequest()
             showToast("Success", "Password Updates Successfully", "default");
             navigate('/login')
         } catch (error: any) {
@@ -46,7 +47,6 @@ const UpdatePasswordPage = () => {
         >
             <BrandLogo size={80} />
             <Typography size="lg" className="font-bold text-teal-500">Create New Password</Typography>
-            {/* <Spacer y={2} /> */}
             <Typography size="sm" className="font-light text-center">Your new password must be different from any of your previous passwords.</Typography>
             <Spacer y={2} />
             <Input 
@@ -70,7 +70,7 @@ const UpdatePasswordPage = () => {
                     <PasswordToggleButton toggleVisibility={toggleConfirmPasswordVisibility} isVisible={isConfirmPasswordVisible} />
                 }
             />
-            <Spacer y={5} />
+            <Spacer y={2} />
             <Button 
                 className="bg-gradient-to-bl from-[#2dd4bf] to-[#1f2937]"
                 fullWidth 

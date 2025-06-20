@@ -7,7 +7,8 @@ import Typography from "./ui/typography";
 import { PasswordVector, Spinner } from "./ui/icons";
 import { Link, useNavigate } from "react-router";
 
-const OtpVerificationModal = ({isOpen, onOpenChange, onVerify} : any) => {
+
+const OtpVerificationModal = ({isOpen, onOpenChange, onVerify}: any ) => {
     const [isVerifying, setIsVerifying] = React.useState(false);
     const navigate = useNavigate()
 
@@ -24,6 +25,7 @@ const OtpVerificationModal = ({isOpen, onOpenChange, onVerify} : any) => {
             setIsVerifying(false)
         }
     }
+
     return (
         <Modal className="w-[450px] font-figtree  pb-6" isOpen={isOpen} placement="top-center" onOpenChange={onOpenChange} hideCloseButton>
             <ModalContent>

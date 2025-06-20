@@ -1,16 +1,17 @@
 import { BrandLogo, GoogleLogo, Spinner } from "@/components/ui/icons";
 import { PasswordToggleButton } from "@/components/ui/passwordToggleButton";
 import Typography from "@/components/ui/typography";
+import { mockRequest } from "@/service/apiRequestService";
 import { showToast } from "@/utils/showToast";
 import { Button, Divider, Input, Spacer } from "@heroui/react";
 import React from "react";
-import { Form, Link } from "react-router";
+import { Form, Link, useNavigate } from "react-router";
 
 
 const useLogin = () => {
     const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
     const [isRequesting, setIsRequesting] = React.useState(false);
-
+    const navigate = useNavigate()
     const togglePasswordVisibility = () => setIsPasswordVisible(!isPasswordVisible);
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -19,8 +20,9 @@ const useLogin = () => {
         setIsRequesting(true);
 
         try {
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+            await mockRequest()
             showToast("Success", "Login Successfully", "default");
+            navigate("/")
         } catch (error: any) {
             showToast("Something went wrong", error.message,  "danger");
         } finally {
@@ -90,7 +92,7 @@ const LoginPage = () => {
                     <Typography size="sm">Continue with Google</Typography>
                 </Button>
                 <Spacer y={5} />
-                <Typography size="sm">Don't have and account?
+                <Typography size="sm">Don't have an account?
                     <Link to="/register" className="text-blue-500 hover:text-blue-400 active:text-blue-300">&nbsp;Sign Up </Link>
                 </Typography>
             </Form>

@@ -1,6 +1,7 @@
 import OtpVerificationModal from "@/components/otVerificationModal";
 import { BrandLogo, Spinner } from "@/components/ui/icons";
 import Typography from "@/components/ui/typography";
+import { mockRequest } from "@/service/apiRequestService";
 import { showToast } from "@/utils/showToast";
 import { Button, Divider, Input, Spacer, useDisclosure } from "@heroui/react";
 import React from "react";
@@ -15,7 +16,7 @@ const useForgotPassword = () => {
         event.preventDefault();
         setIsRequesting(true);
         try {
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+            await mockRequest()
             showToast("Success", "Email Sent Successfully", "default");
             onOpen()
         } catch (error: any) {
@@ -28,12 +29,12 @@ const useForgotPassword = () => {
 
     const onVerify = async (event: React.FormEvent<HTMLFormElement>) => {
         event?.preventDefault()
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await mockRequest();
     }
     return { isRequesting, onVerify, onSubmit, onOpen, isOpen, onOpenChange }
 }
 
-const  ForgotPassword = () => {
+const ForgotPassword = () => {
 
     const { onVerify, isRequesting, onSubmit, onOpen, isOpen, onOpenChange } = useForgotPassword();
 
