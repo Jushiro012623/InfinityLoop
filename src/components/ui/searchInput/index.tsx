@@ -1,4 +1,4 @@
-import { Input, Kbd } from '@heroui/react'
+import { Input } from '@heroui/react'
 import { FiSearch } from 'react-icons/fi'
 
 const SearchInput = ({className}: any) => {

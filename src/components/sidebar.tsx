@@ -2,7 +2,7 @@ import { Spacer } from '@heroui/react'
 import { BrandLogo } from './ui/icons'
 import Typography from './ui/typography'
 import { Fragment, type PropsWithChildren } from 'react'
-import { Link, useLocation } from 'react-router'
+import { Link, useLocation, useNavigate } from 'react-router'
 import { sideBarLinks } from '@/config/sidebarLinks.tsx'
 import SearchInput from './ui/searchInput'
 import { MdKeyboardArrowLeft } from 'react-icons/md'
@@ -37,23 +37,27 @@ const SideBar = () => {
   )
 }
 
-const SideBarHeader = ({ wide }: { wide: boolean }) => (
-  <div className="flex items-center pt-5 px-3 transition-all duration-300">
-    <BrandLogo size={40} className="transition-all" />
-    <Spacer x={1} />
-    <Typography
-      size="xl"
-      className={`
-        overflow-hidden whitespace-nowrap transition-all duration-300 ease-in-out
-        bg-gradient-to-r from-[#2dd4bf] to-[#115e59] bg-clip-text !text-transparent font-rosca
-        ${wide ? 'opacity-100 max-w-[200px]' : 'opacity-0 max-w-0'}
-      `}
-    >
-      Infinity
-    </Typography>
-  </div>
-)
+const SideBarHeader = ({ wide }: { wide: boolean }) => {
+    
+    const navigate = useNavigate()
 
+    return (
+    <div className="flex items-center pt-5 px-3 transition-all duration-300" onClick={() => navigate('/')}>
+        <BrandLogo size={40} className="transition-all" />
+        <Spacer x={1} />
+        <Typography
+        size="xl"
+        className={`
+            overflow-hidden whitespace-nowrap transition-all duration-300 ease-in-out
+            bg-gradient-to-r from-[#2dd4bf] to-[#115e59] bg-clip-text !text-transparent font-rosca
+            ${wide ? 'opacity-100 max-w-[200px]' : 'opacity-0 max-w-0'}
+        `}
+        >
+        Infinity
+        </Typography>
+    </div>
+    )
+}
 const SideBarBody = ({ wide }: { wide: boolean }) => {
   const { pathname: currentPath } = useLocation()
 
