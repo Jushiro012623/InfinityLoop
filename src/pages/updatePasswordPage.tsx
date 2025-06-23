@@ -46,7 +46,7 @@ const UpdatePasswordPage = () => {
             onSubmit={onSubmit}
         >
             <BrandLogo size={80} />
-            <Typography size="lg" className="font-bold text-teal-500">Create New Password</Typography>
+            <Typography size="lg" className="font-bold !text-teal-500">Create New Password</Typography>
             <Typography size="sm" className="font-light text-center">Your new password must be different from any of your previous passwords.</Typography>
             <Spacer y={2} />
             <Input 

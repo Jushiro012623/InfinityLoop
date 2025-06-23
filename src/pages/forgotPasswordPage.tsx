@@ -44,7 +44,7 @@ const ForgotPassword = () => {
                 onSubmit={onSubmit}
             >
                 <BrandLogo size={80} />
-                <Typography size="lg" className="font-bold text-teal-500">Forgot your Password?</Typography>
+                <Typography size="lg" className="font-bold !text-teal-500">Forgot your Password?</Typography>
                 <Spacer y={2} />
                 <Typography size="sm" className="font-light text-center"> We’ll send a one-time password (OTP) to your email to reset your account.</Typography>
                 <Spacer y={6} />

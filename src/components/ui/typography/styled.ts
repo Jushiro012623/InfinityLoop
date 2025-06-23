@@ -1,13 +1,14 @@
 import type { ColorVariants, SizeVariants, StyleVariant } from "./types";
 
 const colorMap: Record<ColorVariants, string> = {
-  default: "text-gray-800",
+  default: "text-gray-800 dark:text-gray-100",
   primary: "text-blue-600",
   secondary: "text-purple-600",
   success: "text-green-600",
   warning: "text-yellow-600",
   danger: "text-red-600",
-};
+  brand: "text-teal-500"
+}
 
 const hoverColorMap: Record<ColorVariants, string> = {
   default: "cursor-pointer hover:text-gray-900",
@@ -16,6 +17,7 @@ const hoverColorMap: Record<ColorVariants, string> = {
   success: "cursor-pointer hover:text-green-800",
   warning: "cursor-pointer hover:text-yellow-700",
   danger: "cursor-pointer hover:text-red-800",
+  brand: "cursor-pointer hover:text-teal-800"
 };
 
 const sizeMap: Record<SizeVariants, string> = {

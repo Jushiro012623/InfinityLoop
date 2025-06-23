@@ -44,7 +44,7 @@ const LoginPage = () => {
                 onSubmit={onSubmit}
             >
                 <BrandLogo size={80} />
-                <Typography size="lg" className="font-bold text-teal-500">Log in to your Account</Typography>
+                <Typography size="lg" className="font-bold !text-teal-500">Log in to your Account</Typography>
                 <Spacer y={2} />
                 <Typography size="sm" className="font-light">Welcome back. Please enter your details to login.</Typography>
                 <Spacer y={6} />

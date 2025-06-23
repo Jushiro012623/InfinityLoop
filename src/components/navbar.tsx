@@ -1,9 +1,11 @@
 import React from 'react'
+import { ThemeSwitch } from './themeSwitch'
 
 const Navbar = () => {
   return (
     <React.Fragment>
-        NAVBAR
+        
+        <ThemeSwitch />
     </React.Fragment>
   )
 }

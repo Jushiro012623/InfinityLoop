@@ -1,12 +1,16 @@
 import Navbar from "@/components/navbar"
+import SideBar from "@/components/sidebar"
 import { Outlet } from "react-router"
 
 
 const MainLayout = () => {
   return (
-    <div className='w-full min-h-screen'>
-        <Navbar />
-        <Outlet />
+    <div className='w-full min-h-screen flex font-figtree dark:bg-default-50 '>
+        <SideBar />
+        <div>
+            <Navbar />
+            <Outlet />
+        </div>
     </div>
   )
 }

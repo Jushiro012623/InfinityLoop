@@ -25,3 +25,31 @@
     font-style: normal;
     font-display: swap;
 }
+
+
+@font-face {
+  font-family: "Rosca";
+  src: url("../assets/fonts/rosca/rosca.otf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rosca-Slant";
+  src: url("../assets/fonts/rosca/rosca-slant.otf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.brand-text{
+    background: linear-gradient(to right, #2dd4bf, #1f2937);
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+
+.active-indicator{
+    border-radius: 0% 27% 27% 0% / 25% 24% 24% 25%;
+}

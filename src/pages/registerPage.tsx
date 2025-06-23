@@ -43,7 +43,7 @@ const RegisterPage = () => {
                 onSubmit={onSubmit}
             >
                 <BrandLogo size={80} />
-                <Typography size="lg" className="font-bold text-teal-500">Create New Account</Typography>
+                <Typography size="lg" className="font-bold !text-teal-500">Create New Account</Typography>
                 <Spacer y={2} />
                 <Typography size="sm" className="font-light">Welcome! Let’s get you set up with a new account.</Typography>
                 <Spacer y={6} />

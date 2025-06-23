@@ -14,6 +14,8 @@ export default {
             poppins: ['Poppins', 'sans-serif'],
             inter: ['Inter', 'sans-serif'],
             figtree: ['Figtree', 'sans-serif'],
+            rosca: ['Rosca', 'sans-serif'],
+            "rosca-slant": ['Rosca-Slant', 'sans-serif'],
         },
     },
   },
