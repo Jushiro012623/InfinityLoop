@@ -7,7 +7,7 @@ const MainLayout = () => {
   return (
     <div className='w-full min-h-screen flex font-figtree dark:bg-default-50 '>
         <SideBar />
-        <div>
+        <div className="flex w-full flex-col">
             <Navbar />
             <Outlet />
         </div>

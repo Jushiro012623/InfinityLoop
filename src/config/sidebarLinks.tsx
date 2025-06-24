@@ -1,6 +1,7 @@
 import { GrAppsRounded, GrCatalog } from "react-icons/gr";
 import { BsFillPeopleFill, BsStarFill } from "react-icons/bs";
 import { IoChatbubblesSharp,IoSettings  } from "react-icons/io5";
+import { RiProgress3Line } from "react-icons/ri";
 
 const sideBarLinks = (size = 15) => [
   {
@@ -20,6 +21,12 @@ const sideBarLinks = (size = 15) => [
     icon: <BsFillPeopleFill size={size} />,
     path: "/trades",
     description: "View sent/received trades",
+  },
+  {
+    label: "Trade Status",
+    icon: <RiProgress3Line size={size} />,
+    path: "/trade-status",
+    description: "Track Trade Status",
   },
   {
     label: "Messages",

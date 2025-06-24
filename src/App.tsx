@@ -7,7 +7,7 @@ const App = () => {
   return (
     <React.Fragment>
         <HeroUIProvider>
-            <ToastProvider placement="top-right" toastOffset={60}/>
+            <ToastProvider placement="top-right" toastOffset={75}/>
             <Root />
         </HeroUIProvider>
     </React.Fragment>
