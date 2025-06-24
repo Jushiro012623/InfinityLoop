@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeSwitch } from './themeSwitch'
 import Typography from './ui/typography'
-import { Avatar, Badge, Dropdown, DropdownItem, DropdownMenu, DropdownSection, DropdownTrigger, Spacer, User } from '@heroui/react'
+import { Avatar, Badge, Dropdown, DropdownItem, DropdownMenu, DropdownSection, DropdownTrigger, Spacer } from '@heroui/react'
 import { GoBell  } from "react-icons/go";
 import SearchInput from './ui/searchInput';
 import { useLocation } from 'react-router';
