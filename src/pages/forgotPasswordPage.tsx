@@ -1,11 +1,12 @@
 import OtpVerificationModal from "@/components/otVerificationModal";
+import CustomForm from "@/components/ui/forms";
 import { BrandLogo, Spinner } from "@/components/ui/icons";
 import Typography from "@/components/ui/typography";
 import { mockRequest } from "@/service/apiRequestService";
 import { showToast } from "@/utils/showToast";
 import { Button, Divider, Input, Spacer, useDisclosure } from "@heroui/react";
 import React from "react";
-import { Form, Link } from "react-router";
+import { Link } from "react-router";
 
 
 const useForgotPassword = () => {
@@ -39,10 +40,8 @@ const ForgotPassword = () => {
     const { onVerify, isRequesting, onSubmit, onOpen, isOpen, onOpenChange } = useForgotPassword();
 
     return (
-        <section className="flex items-center justify-center w-full h-screen">
-            <Form className="flex w-[450px] flex-col items-center px-8 pb-12 pt-5 border rounded-lg shadow-medium font-figtree" 
-                onSubmit={onSubmit}
-            >
+        <>
+            <CustomForm onSubmit={onSubmit} >
                 <BrandLogo size={80} />
                 <Typography size="lg" className="font-bold !text-teal-500">Forgot your Password?</Typography>
                 <Spacer y={2} />
@@ -71,9 +70,9 @@ const ForgotPassword = () => {
                  <Typography size="sm">Remember password?
                     <Link to="/login" className="text-blue-500 hover:text-blue-400 active:text-blue-300">&nbsp;Login </Link>
                 </Typography>
-            </Form>
+            </CustomForm>
             <OtpVerificationModal onOpen={onOpen} isOpen={isOpen} onOpenChange={onOpenChange} onVerify={onVerify} />
-        </section>
+        </>
     );
 };
 

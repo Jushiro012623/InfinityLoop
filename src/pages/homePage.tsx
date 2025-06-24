@@ -5,7 +5,7 @@ import { CiHeart, CiPause1, CiRepeat, CiShuffle, CiSquareChevLeft, CiSquareChevR
 const HomePage = () => {
   const [liked, setLiked] = useState<boolean>(false);
   return (
-    <div className="flex-gow h-full flex items-center justify-center">
+    <div className="flex h-full items-center justify-center">
       <Card
         isBlurred
         className="border-none bg-background/60 dark:bg-default-100/50 max-w-[610px]"

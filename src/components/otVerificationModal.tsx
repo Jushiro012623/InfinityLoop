@@ -27,7 +27,7 @@ const OtpVerificationModal = ({isOpen, onOpenChange, onVerify}: any ) => {
     }
 
     return (
-        <Modal className="border w-[450px] font-figtree pb-6" isOpen={isOpen} placement="top-center" onOpenChange={onOpenChange} hideCloseButton>
+        <Modal className="border dark:border-[#1f1e23] w-[450px] font-figtree pb-6" isOpen={isOpen} placement="top-center" onOpenChange={onOpenChange} hideCloseButton isDismissable={false}>
             <ModalContent>
             {(onClose) => (
                 <>

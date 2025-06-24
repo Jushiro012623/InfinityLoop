@@ -1,3 +1,4 @@
+import CustomForm from "@/components/ui/forms";
 import { BrandLogo, GoogleLogo, Spinner } from "@/components/ui/icons";
 import { PasswordToggleButton } from "@/components/ui/passwordToggleButton";
 import Typography from "@/components/ui/typography";
@@ -5,7 +6,7 @@ import { mockRequest } from "@/service/apiRequestService";
 import { showToast } from "@/utils/showToast";
 import { Button, Divider, Input, Spacer } from "@heroui/react";
 import React from "react";
-import { Form, Link, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 
 const useLogin = () => {
@@ -39,10 +40,8 @@ const LoginPage = () => {
     const { isPasswordVisible, isRequesting, togglePasswordVisibility, onSubmit } = useLogin();
 
     return (
-        <section className="flex items-center justify-center w-full h-screen">
-            <Form className="flex min-w-[450px] flex-col items-center px-8 pb-12  pt-5 border rounded-lg shadow-medium font-figtree" 
-                onSubmit={onSubmit}
-            >
+        <>
+            <CustomForm onSubmit={onSubmit} >
                 <BrandLogo size={80} />
                 <Typography size="lg" className="font-bold !text-teal-500">Log in to your Account</Typography>
                 <Spacer y={2} />
@@ -95,8 +94,8 @@ const LoginPage = () => {
                 <Typography size="sm">Don't have an account?
                     <Link to="/register" className="text-blue-500 hover:text-blue-400 active:text-blue-300">&nbsp;Sign Up </Link>
                 </Typography>
-            </Form>
-        </section>
+            </CustomForm>
+        </>
     );
 };
 

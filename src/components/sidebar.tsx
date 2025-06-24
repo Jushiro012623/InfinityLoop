@@ -6,7 +6,6 @@ import { Link, useLocation, useNavigate } from 'react-router'
 import { sideBarLinks } from '@/config/sidebarLinks.tsx'
 import { MdKeyboardArrowLeft } from 'react-icons/md'
 import useLocalStorage from '@/hooks/useLocalStorage'
-import { BiDotsHorizontalRounded } from "react-icons/bi";
 
 const SideBar = () => {
 
@@ -15,16 +14,18 @@ const SideBar = () => {
     <div
       className={`
         ${wideSideBar ? 'w-72' : 'w-14'}
-        h-screen relative flex flex-col 
+        h-screen relative flex-col 
         transition-width duration-300 ease-in-out
         border-r-1 border-default-200
+        hidden
+        lg:flex
       `}
     >
       <SideBarHeader wide={wideSideBar} />
       <SideBarBody wide={wideSideBar} />
       <SideBarFooter wide={wideSideBar} />
       <div
-        className="border border-default-200 w-8 h-8 bg-white dark:bg-default-50 hover:bg-default-200 dark:hover:bg-default-200 rounded-full cursor-pointer flex items-center justify-center absolute top-1/2 right-0 translate-x-3 z-10"
+        className="border border-default-200 w-8 h-8 bg-white dark:bg-default-50 hover:bg-default-200 dark:hover:bg-default-200 rounded-full cursor-pointer flex items-center justify-center absolute top-14 right-0 translate-x-4 z-10  "
         onClick={() => setWideSideBar(!wideSideBar)}
         
       >
@@ -124,7 +125,6 @@ const SideBarFooter = ({ wide }: { wide: boolean }) => {
                 Software Developer
                 </Typography>
             </div>
-            <BiDotsHorizontalRounded size={25} className='flex-grow cursor-pointer'/>
         </div>
     </div>
 );

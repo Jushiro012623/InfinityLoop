@@ -1,9 +1,10 @@
+import CustomForm from '@/components/ui/forms'
 import { BrandLogo } from '@/components/ui/icons'
 import { PasswordToggleButton } from '@/components/ui/passwordToggleButton'
 import Typography from '@/components/ui/typography'
 import { mockRequest } from '@/service/apiRequestService'
 import { showToast } from '@/utils/showToast'
-import { Button, Form, Input, Spacer, Spinner } from '@heroui/react'
+import { Button, Input, Spacer, Spinner } from '@heroui/react'
 import React from 'react'
 import { useNavigate } from 'react-router'
 
@@ -41,10 +42,8 @@ const UpdatePasswordPage = () => {
     const { isPasswordVisible, isRequesting, isConfirmPasswordVisible, togglePasswordVisibility, toggleConfirmPasswordVisibility, onSubmit } = useUpdatePassword();
 
   return (
-    <section className="flex items-center justify-center w-full h-screen">
-        <Form className="flex w-[450px] flex-col items-center px-8 pb-12 pt-5 border rounded-lg shadow-medium font-figtree" 
-            onSubmit={onSubmit}
-        >
+    <>
+        <CustomForm onSubmit={onSubmit} >
             <BrandLogo size={80} />
             <Typography size="lg" className="font-bold !text-teal-500">Create New Password</Typography>
             <Typography size="sm" className="font-light text-center">Your new password must be different from any of your previous passwords.</Typography>
@@ -82,8 +81,8 @@ const UpdatePasswordPage = () => {
             >
                 <Typography size="sm" className="text-white">Update Password</Typography>
             </Button>
-        </Form>
-    </section>
+        </CustomForm>
+    </>
   )
 }
 

@@ -5,17 +5,30 @@ import LoginPage from "./pages/loginPage";
 import UpdatePasswordPage from "./pages/updatePasswordPage";
 import RegisterPage from "./pages/registerPage";
 import ForgotPassword from "./pages/forgotPasswordPage";
+import AuthLayout from "./layouts/authLayout";
+import Messages from "./pages/messagePage";
+import ProfilePage from "./pages/profilepage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: MainLayout,
-    children: [{ index: true, Component: HomePage }],
+    children: [
+      { index: true, Component: HomePage },
+      { path: "messages", Component: Messages },
+    ],
   },
-  { path: "/login", Component: LoginPage },
-  { path: "/register", Component: RegisterPage },
-  { path: "/forgot-password", Component: ForgotPassword },
-  { path: "/update-password", Component: UpdatePasswordPage },
+  {
+    path: "/",
+    Component: AuthLayout,
+    children: [
+      { path: "login", Component: LoginPage },
+      { path: "register", Component: RegisterPage },
+      { path: "forgot-password", Component: ForgotPassword },
+      { path: "update-password", Component: UpdatePasswordPage },
+    ],
+  },
+  { path: "/profile", Component: ProfilePage },
   {
     path: "*",
     element: <div>Not Found</div>,
