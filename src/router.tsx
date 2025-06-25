@@ -16,6 +16,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, Component: HomePage },
       { path: "messages", Component: Messages },
+      { path: "/profile", Component: ProfilePage },
     ],
   },
   {
@@ -28,7 +29,6 @@ const router = createBrowserRouter([
       { path: "update-password", Component: UpdatePasswordPage },
     ],
   },
-  { path: "/profile", Component: ProfilePage },
   {
     path: "*",
     element: <div>Not Found</div>,

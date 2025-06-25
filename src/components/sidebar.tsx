@@ -10,6 +10,9 @@ import useLocalStorage from '@/hooks/useLocalStorage'
 const SideBar = () => {
 
   const [wideSideBar, setWideSideBar] = useLocalStorage('wideSidebar', true)
+
+  const { pathname: currentPath } = useLocation()
+
   return (
     <div
       className={`
@@ -22,7 +25,7 @@ const SideBar = () => {
       `}
     >
       <SideBarHeader wide={wideSideBar} />
-      <SideBarBody wide={wideSideBar} />
+      <SideBarBody wide={wideSideBar} currentPath={currentPath}/>
       <SideBarFooter wide={wideSideBar} />
       <div
         className="border border-default-200 w-8 h-8 bg-white dark:bg-default-50 hover:bg-default-200 dark:hover:bg-default-200 rounded-full cursor-pointer flex items-center justify-center absolute top-14 right-0 translate-x-4 z-10  "
@@ -60,8 +63,7 @@ const SideBarHeader = ({ wide }: { wide: boolean }) => {
     )
 }
 
-const SideBarBody = ({ wide }: { wide: boolean }) => {
-  const { pathname: currentPath } = useLocation()
+const SideBarBody = ({ wide, currentPath }: { currentPath: string, wide: boolean }) => {
 
   return (
     <div className="flex-grow mt-6"> 
@@ -73,6 +75,8 @@ const SideBarBody = ({ wide }: { wide: boolean }) => {
             <Typography
               size="sm"
               className={`
+                ${link.path === '/profile' ? "block md:hidden" : ""}
+                ${link.label === 'Logout' ? "block md:hidden !text-danger-500" : ""}
                 font-medium relative py-2
                 ${currentPath === link.path ? '!text-teal-500' : '!dark:text-white/70'}
                 px-3 

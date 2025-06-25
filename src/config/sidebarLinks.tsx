@@ -1,7 +1,8 @@
 import { GrAppsRounded, GrCatalog } from "react-icons/gr";
 import { BsFillPeopleFill, BsStarFill } from "react-icons/bs";
-import { IoChatbubblesSharp,IoSettings  } from "react-icons/io5";
+import { IoChatbubblesSharp,IoPersonOutline,IoSettings  } from "react-icons/io5";
 import { RiProgress3Line } from "react-icons/ri";
+import { IoIosLogOut } from "react-icons/io";
 
 const sideBarLinks = (size = 15) => [
   {
@@ -9,6 +10,12 @@ const sideBarLinks = (size = 15) => [
     icon: <GrAppsRounded size={size} />,
     path: "/",
     description: "Personalized feed or skill suggestions",
+  },
+  {
+    label: "Profile",
+    icon: <IoPersonOutline size={size} />,
+    path: "/profile",
+    description: "User Profile",
   },
   {
     label: "Skills Directory",
@@ -45,6 +52,12 @@ const sideBarLinks = (size = 15) => [
     icon: <IoSettings size={size} />,
     path: "/settings",
     description: "Account/password, notifications",
+  },
+  {
+    label: "Logout",
+    icon: <IoIosLogOut size={size} />,
+    path: "#",
+    description: "Logout user",
   }
 ];
 

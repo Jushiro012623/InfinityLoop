@@ -1,6 +1,6 @@
 const ProfilePage = () => {
   return (
-    <div className="min-h-screen">ProfilePage</div>
+    <div className="h-full">ProfilePage</div>
   )
 }
 
