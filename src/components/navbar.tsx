@@ -6,7 +6,6 @@ import { Avatar, Badge, Dropdown, DropdownItem, DropdownMenu, DropdownSection, D
   DrawerHeader,
   DrawerBody,
   DrawerFooter,
-  Button,
   useDisclosure, } from '@heroui/react'
 import { GoBell  } from "react-icons/go";
 import SearchInput from './ui/searchInput';
@@ -17,8 +16,6 @@ import { mockMessage, mockNotification } from '@/config/mock';
 import { IoIosLogOut, IoMdClose } from 'react-icons/io';
 import { SideBarBody } from './sidebar';
 import useLocalStorage from '@/hooks/useLocalStorage';
-import { SiTruenas } from 'react-icons/si';
-import { BrandLogo } from './ui/icons';
 
 const Navbar = ({pageTitle} : {pageTitle: string}) => {
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
