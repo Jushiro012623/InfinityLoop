@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import { Fragment } from 'react'
 import { ThemeSwitch } from './themeSwitch'
 import Typography from './ui/typography'
 import { Avatar, Badge, Dropdown, DropdownItem, DropdownMenu, DropdownSection, DropdownTrigger, Kbd, Spacer, Drawer,
@@ -21,32 +21,25 @@ const Navbar = ({pageTitle} : {pageTitle: string}) => {
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
     return (
-        <React.Fragment>
-            <nav className='h-20 border-b-1 border-default-200 flex items-center justify-end md:justify-between px-10 '>
-                <Typography size='lg' tag='h1' className='hidden md:flex font-bold capitalize'>{pageTitle}</Typography>
-
-                <div className=' flex items-center lg:w-[500px]'>
-                    <div className='flex-grow hidden md:flex'>
-                        <SearchInput
-                            className={`
-                                transition-all duration-300 ease-in-out transform origin-left
-                            `}
-                        />
-                    </div>
-                    <FiSearch className='flex md:hidden opacity-60' size={22}/>
-                    <Spacer x={5} />
-                    <NavbarMessage />
-                    <Spacer x={5} />
-                    <NavbarNotification />
-                    <Spacer x={5} />
-                    <ThemeSwitch className='hidden md:flex'/> 
-                    <Spacer x={5} className='hidden md:flex' />
-                    <NavbarAvatar />
-                    <FiMenu className='flex md:hidden opacity-60 cursor-pointer' size={22} onClick={onOpen} />
-                    <MobileNavBar isOpen={isOpen} onOpenChange={onOpenChange} />
+        <nav className='h-20 border-b-1 border-default-200 flex items-center justify-end md:justify-between px-10 '>
+            <Typography size='lg' tag='h1' className='hidden md:flex font-bold capitalize'>{pageTitle}</Typography>
+            <div className=' flex items-center lg:w-[500px]'>
+                <div className='flex-grow hidden md:flex'>
+                    <SearchInput className={` transition-all duration-300 ease-in-out transform origin-left `} />
                 </div>
-            </nav>
-        </React.Fragment>
+                <FiSearch className='flex md:hidden opacity-60' size={22}/>
+                <Spacer x={5} />
+                <NavbarMessage />
+                <Spacer x={5} />
+                <NavbarNotification />
+                <Spacer x={5} />
+                <ThemeSwitch className='hidden md:flex'/> 
+                <Spacer x={5} className='hidden md:flex' />
+                <NavbarAvatar />
+                <FiMenu className='flex md:hidden opacity-60 cursor-pointer' size={22} onClick={onOpen} />
+                <MobileNavBar isOpen={isOpen} onOpenChange={onOpenChange} />
+            </div>
+        </nav>
     )
 }
 
@@ -86,7 +79,7 @@ const NavbarNotification = () => {
     <Dropdown
         showArrow
         radius="sm"
-        className='w-96'
+        className='sm:w-96 mt-2'
         placement="bottom-end"
     >
             <DropdownTrigger>
@@ -144,7 +137,7 @@ const NavbarMessage = () => {
     return (
         <Dropdown
             radius="sm"
-            className='w-96 mt-2'
+            className='sm:w-96 mt-2'
             placement="bottom-end"
         >
             <DropdownTrigger>
